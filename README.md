@@ -1,1 +1,1 @@
-# timeSheet
+Welcome to our Time Sheet program
