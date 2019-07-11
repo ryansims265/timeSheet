@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+$("#submit-button").on("click", function(event) {
+console.log("testing");
+});
+=======
 $("#submit-button").on("click", function(event) {
 console.log("testing");
 });
@@ -13,3 +18,4 @@ var firebaseConfig = {
     appId: "1:710450884721:web:f469249e7ff2ce00"
   };
   firebase.initializeApp(firebaseConfig);
+>>>>>>> eeed438af57e13006f2b4ba3467c4e1c357881ad
