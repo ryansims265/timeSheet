@@ -18,21 +18,21 @@ var firebaseConfig = {
   $("#submit-button").on("click", function(event) {
     event.preventDefault();
 //Create variables for each of the user submission areas 
-    var name = $("#name-input").val().trim();
-    var role = $("#role-input").val().trim();
-    var startdate = $("#startdate-input").val().trim();
-    var monthlyrate = $("#monthlyrate-input").val().trim();
+    var name = $("#inputName").val().trim();
+    var role = $("#inputRole").val().trim();
+    var start = $("#inputStart").val().trim();
+    var monthly = $("#inputRate").val().trim();
     console.log(name);
     console.log(role);
-    console.log(startdate);
-    console.log(monthlyrate);
+    console.log(start);
+    console.log(rate);
 
     //Then push the user data values to the database
     database.ref().set({
       name: name,
       role: role,
-      startdate: startdate,
-      monthlyrate: monthlyrate
+      start: start,
+      rate: rate
     });
 
 
@@ -46,13 +46,13 @@ var firebaseConfig = {
 
       console.log(snapshot.val().name);
       console.log(snapshot.val().role);
-      console.log(snapshot.val().startdate);
-      console.log(snapshot.val().monthlyrate);
+      console.log(snapshot.val().start);
+      console.log(snapshot.val().rate);
       // Change the HTML
       $("#data").text(snapshot.val().name);
       $("#data").text(snapshot.val().role);
-      $("#data").text(snapshot.val().startdate);
-      $("#data").text(snapshot.val().monthlyrate);
+      $("#data").text(snapshot.val().start);
+      $("#data").text(snapshot.val().rate);
 
 //Setup error handling 
     }, function(errorObject) {
