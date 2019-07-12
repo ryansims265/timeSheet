@@ -20,38 +20,38 @@
     <!-- ================================================== Josh's Work ================================================== -->
 
     <div class="container justify-content-center">
-        <ul class="list-group list-group-flush float-right">
-            <h6>Employee Name</h6>
-            <li class="list-group-item" id = "employeeName">Cras justo odio</li>
-     
-        </ul>
-        <ul class="list-group list-group-flush float-right">
-            <h6>Role</h6>
-            <li class="list-group-item" id = "role">Cras justo odio</li>
-      
-        </ul>
-        <ul class="list-group list-group-flush float-right">
-            <h6>Start Date</h6>
-            <li class="list-group-item" id = "role">Cras justo odio</li>
-        
-        </ul>
-        <ul class="list-group list-group-flush float-right">
-            <h6>Months Worked</h6>
-            <li class="list-group-item" id = "monthsWorked">Cras justo odio</li>
-  
-        </ul>
-        <ul class="list-group list-group-flush float-right">
-            <h6>Monthly Rate ($)</h6>
-            <li class="list-group-item" id = "monthlyRate">Cras justo odio</li>
- 
-        </ul>
-        <ul class="list-group list-group-flush float-right">
-            <h6>Total Billed ($)</h6>
-            <li class="list-group-item" id = "totalBilled">Cras justo odio</li>
-     
-        </ul>
-    </div>
-
+        <div class="container justify-content-center">
+            <div class="row">
+                <h1>Employee Data Management</h1>
+            </div>
+            <div class="row">
+                <h4>A comprehensive Directory of Employee Billable Hours</h4>
+            </div>
+        </div>
+   
+    <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col" >Employee Name</th>
+                <th scope="col">Role</th>
+                <th scope="col">Months Worked</th>
+                <th scope="col">Monthly Rate ($)</th>
+                <th scope="col">Total Billed ($)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" id = "tracker">1</th>
+                <td id="employeeName"></td>
+                <td  id="role"></td>
+                <td id = "monthsWorked"></td>
+                <td id="monthlyRate"></td>
+                <td  id="totalBilled"></td>
+              </tr>
+            
+            </tbody>
+          </table>
     <script type="text/javascript" src="script.js"> </script>
 </body>
 
