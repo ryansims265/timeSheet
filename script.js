@@ -19,7 +19,7 @@ var firebaseConfig = {
   var database = firebase.database();
 
   //Create a call to the submit button that waits for the click 
-  $("#submitbutton").on("click", function(event) {
+  $("#submit-button").on("click", function(event) {
     event.preventDefault();
     console.log("Submitted");
 //Create variables for each of the user submission areas 
@@ -51,19 +51,13 @@ $("#inputRate").val("");
   
 
 //Next set up a snapshot so that it will update the DOM if the data changes at any time 
-    database.ref().on("value", function(snapshot) {
-      console.log(snapshot.val());
-
+    database.ref().on("child_added", function(snapshot) {
       console.log(snapshot.val().name);
       console.log(snapshot.val().role);
       console.log(snapshot.val().start);
       console.log(snapshot.val().rate);
       // Change the HTML
-      $("#data").html(snapshot.val().name);
-      $("#data").html(snapshot.val().role);
-      $("#data").html(snapshot.val().start);
-      $("#data").html(snapshot.val().rate);
-
+$("#table").append("<tr><td>" + snapshot.val().name + "</td><td>" + snapshot.val().role + "</td><td>" + snapshot.val().start + "</td><td>" + snapshot.val().rate) + "</td></tr>";
 //Setup error handling 
     }, function(errorObject) {
       console.log("The read failed: " + errorObject.code);

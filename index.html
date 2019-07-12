@@ -21,29 +21,21 @@
             </div>
         </div>
    
-    <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col" >Employee Name</th>
-                <th scope="col">Role</th>
-                <th scope="col">Months Worked</th>
-                <th scope="col">Monthly Rate ($)</th>
-                <th scope="col">Total Billed ($)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row" id = "tracker">1</th>
-                <td id="employeeName"></td>
-                <td  id="role"></td>
-                <td id = "monthsWorked"></td>
-                <td id="monthlyRate"></td>
-                <td  id="totalBilled"></td>
-              </tr>
-            
-            </tbody>
-          </table>
+        <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">Monthly Rate</th>
+                  </tr>
+                </thead>
+                <tbody id="table">
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tbody>
+              </table>
             
             
             
@@ -72,7 +64,7 @@
                         <input type="p" class="form-control" id="inputRate" placeholder="200000">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
             </div>
         </form>
 
