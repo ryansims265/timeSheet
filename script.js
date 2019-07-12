@@ -50,21 +50,21 @@ $("#inputRate").val("");
     });
   
 
-// //Next set up a snapshot so that it will update the DOM if the data changes at any time 
-//     database.ref().on("value", function(snapshot) {
-//       console.log(snapshot.val());
+//Next set up a snapshot so that it will update the DOM if the data changes at any time 
+    database.ref().on("value", function(snapshot) {
+      console.log(snapshot.val());
 
-//       console.log(snapshot.val().name);
-//       console.log(snapshot.val().role);
-//       console.log(snapshot.val().start);
-//       console.log(snapshot.val().rate);
-//       // Change the HTML
-//       $("#data").html(snapshot.val().name);
-//       $("#data").html(snapshot.val().role);
-//       $("#data").html(snapshot.val().start);
-//       $("#data").html(snapshot.val().rate);
+      console.log(snapshot.val().name);
+      console.log(snapshot.val().role);
+      console.log(snapshot.val().start);
+      console.log(snapshot.val().rate);
+      // Change the HTML
+      $("#data").html(snapshot.val().name);
+      $("#data").html(snapshot.val().role);
+      $("#data").html(snapshot.val().start);
+      $("#data").html(snapshot.val().rate);
 
-// //Setup error handling 
-//     }, function(errorObject) {
-//       console.log("The read failed: " + errorObject.code);
-//     });
+//Setup error handling 
+    }, function(errorObject) {
+      console.log("The read failed: " + errorObject.code);
+    });
