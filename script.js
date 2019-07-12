@@ -1,4 +1,8 @@
 //First setup the firebase database 
+console.log("Waiting for Submission");
+
+
+
 var firebaseConfig = {
     apiKey: "AIzaSyA2dI2zWOEsFCpHiCDs5T4200ax98VJRb8",
     authDomain: "anotherone-631a5.firebaseapp.com",
@@ -15,46 +19,52 @@ var firebaseConfig = {
   var database = firebase.database();
 
   //Create a call to the submit button that waits for the click 
-  $("#submit-button").on("click", function(event) {
+  $("#submitbutton").on("click", function(event) {
     event.preventDefault();
+    console.log("Submitted");
 //Create variables for each of the user submission areas 
     var name = $("#inputName").val().trim();
     var role = $("#inputRole").val().trim();
     var start = $("#inputStart").val().trim();
-    var monthly = $("#inputRate").val().trim();
+    var rate = $("#inputRate").val().trim();
     console.log(name);
     console.log(role);
     console.log(start);
     console.log(rate);
 
     //Then push the user data values to the database
-    database.ref().set({
+    database.ref().push({
       name: name,
       role: role,
       start: start,
       rate: rate
     });
+//Clear the input boxes after submission 
 
+$("#inputName").val("");
+$("#inputRole").val("");
+$("#inputStart").val("");
+$("#inputRate").val("");
 
 
     });
   
 
-//Next set up a snapshot so that it will update the DOM if the data changes at any time 
-    database.ref().on("value", function(snapshot) {
-      console.log(snapshot.val());
+// //Next set up a snapshot so that it will update the DOM if the data changes at any time 
+//     database.ref().on("value", function(snapshot) {
+//       console.log(snapshot.val());
 
-      console.log(snapshot.val().name);
-      console.log(snapshot.val().role);
-      console.log(snapshot.val().start);
-      console.log(snapshot.val().rate);
-      // Change the HTML
-      $("#data").text(snapshot.val().name);
-      $("#data").text(snapshot.val().role);
-      $("#data").text(snapshot.val().start);
-      $("#data").text(snapshot.val().rate);
+//       console.log(snapshot.val().name);
+//       console.log(snapshot.val().role);
+//       console.log(snapshot.val().start);
+//       console.log(snapshot.val().rate);
+//       // Change the HTML
+//       $("#data").html(snapshot.val().name);
+//       $("#data").html(snapshot.val().role);
+//       $("#data").html(snapshot.val().start);
+//       $("#data").html(snapshot.val().rate);
 
-//Setup error handling 
-    }, function(errorObject) {
-      console.log("The read failed: " + errorObject.code);
-    });
+// //Setup error handling 
+//     }, function(errorObject) {
+//       console.log("The read failed: " + errorObject.code);
+//     });
